@@ -3,6 +3,7 @@ const quantity = document.querySelector(".quantity");
 const currentPrice = document.querySelector(".current-price");
 const checkBtn = document.querySelector(".check-btn");
 const resultMsg = document.querySelector(".result-msg");
+const imgContent = document.querySelector(".img-content");
 
 function stockPredictor() {
     var costPrice = purchasePrice.value * quantity.value;
@@ -11,14 +12,15 @@ function stockPredictor() {
     if (sellingPrice > costPrice ) {
         var ProfitInAbsolute = sellingPrice - costPrice;
         var profitInPercentage = (ProfitInAbsolute/costPrice) * 100;
-        resultMsg.innerText = "You gained " + profitInPercentage.toFixed(2) +" %. Your total profit is " + ProfitInAbsolute;
-        
+        resultMsg.classList.remove("hide");
+        resultMsg.innerText = "You gained " + profitInPercentage.toFixed(2) +" %. Your total profit is ₹ " + ProfitInAbsolute;        
     }
 
     else {
         var lostInAbsolute = costPrice - sellingPrice;
         var lostInPercentage = (lostInAbsolute/costPrice) * 100;
-        resultMsg.innerText = "You lost ", lostInPercentage.toFixed(2), " %. Your total lost is ", lostInAbsolute;
+        resultMsg.classList.remove("hide");
+        resultMsg.innerText = "You lost " + lostInPercentage.toFixed(2) + " %. Your total lost is ₹ " + lostInAbsolute;
     }
 }
 

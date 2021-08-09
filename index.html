@@ -8,23 +8,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Stock: profit or lost</h1>
+    <div class="main-container">
+    <div class="container">
+        <div class="box-container">
+            <div class="content-container">
+                <h1>Check Profit/Loss on your Stock</h1>
 
-    <label for="purchase-price">Purchase price for one stock </label>
-    <input type="number" class="purchase-price">
+                <label>
+                    <input type="number" class="purchase-price" placeholder="Enter cost price of stock">Purchase price for one stock
+                </label>
 
-    <label for="quantity">Quantity</label>
-    <input type="number" class="quantity">
+                <label>
+                    <input type="number" class="quantity" placeholder="Enter quantity of stock"> Stock Quantity
+                </label>
+               
+                <label>
+                    <input type="number" class="current-price" placeholder="Enter current price of stock">Current Stock Price
+                </label>    
 
-    <label for="Current-price">Current Stock Price</label>
-    <input type="number" class="current-price">
+                <button type="submit" class="check-btn">Check</button>
 
-    <button type="submit" class="check-btn">Check</button>
+                <div class="result-msg hide">
 
-    <div class="result-msg"></div>
+                </div>
+            </div>
+            <div class="img-content">
+                <img src="img2.jfif" alt="">
+                <img class="hide" src="stonks-rise.gif">
+                <img class="hide" src="not-stonks.gif">
+
+            </div>
+        </div>
+    </div>
     
   
-
+</div>
     <script src="app.js"></script>
 </body>
 </html>
