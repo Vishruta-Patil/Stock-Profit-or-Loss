@@ -1,12 +1,14 @@
-body{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   overscroll-behavior: none; 
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+    font-family: 'poppins', 'sans-serif';
+    font-family: sa;
 }
 
 .main-container {
-    margin:40px;
+    margin: 40px;
 }
 
 h1 {
@@ -17,35 +19,35 @@ h1 {
 
 .box-container {
     display: flex;
-    background-color: black; 
-    color:white;
+    background-color: black;
+    color: white;
     align-items: center;
     justify-self: center;
-    margin:auto;
+    margin: auto;
     padding: 30px
 }
 
 .container {
-    margin:auto;
+    margin: auto;
     display: block;
     max-width: 1200px;
-    margin-top: 50px;   
+    margin-top: 50px;
 }
 
 .content-container {
-    width:60%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    padding:2rem;
+    padding: 2rem;
     padding-bottom: 5rem;
-    padding-left: 4rem;  
+    padding-left: 4rem;
 }
 
- label {
+label {
     border-bottom: 1px solid white;
 }
 
- input {
+input {
     margin: 0.5rem 0rem;
     width: 50%;
     border: none;
@@ -56,16 +58,16 @@ h1 {
 
 button {
     padding: 10px 20px;
-    width:30%;
+    width: 30%;
     font-weight: bolder;
     font-size: 15px;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .img-content {
     background-color: black;
     border: 1px solid black;
-    width:40%;
+    width: 40%;
     height: 72vh;
 }
 
@@ -78,15 +80,107 @@ img {
 }
 
 .result-msg {
-    background-color: rgb(255, 255,255,0.2);
+    background-color: rgb(255, 255, 255, 0.2);
     padding: 20px 25px;
     margin-top: 30px;
-    color:whitesmoke;
+    color: whitesmoke;
     font-size: 20px;
     font-weight: bolder;
-    width:60%;
+    width: 60%;
 }
 
 .hide {
-    display:none;
+    display: none;
+}
+
+@media only screen and (max-width: 930px) {
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .box-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+
+    .content-container {
+        width: 80%;
+        padding: 2rem;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+    }
+
+    .result-msg {
+        margin: 2.5rem auto 0rem;
+
+    }
+
+    .img-content {
+        width: 50vw;
+        height: 70vh;
+        margin-bottom: 30px;
+    }
+
+    img {
+        width: 50vw;
+        height: 65vh;
+        object-fit: cover;
+        padding: 2rem 0.5rem;
+        margin: auto;
+    }
+}
+
+
+@media only screen and (max-width: 560px) {
+    h1 {
+        font-size: 2.0rem;
+    }
+
+    .result-msg {
+
+        margin: 1rem auto;
+        padding: 1rem 1.5rem;
+        font-size: 15px;
+    }
+
+    label {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+    img {
+        object-fit: contain;
+        height: 25vh;
+        padding: 0rem 0.5rem;
+    }
+
+    .img-content{
+        height: 25vh;
+        margin-bottom:3rem;
+    }
+}
+
+
+@media only screen and (max-width: 370px) {
+    .content-container{
+        padding-bottom: .5rem;
+    }
+
+    .result-msg {
+        margin-bottom: 0;
+    }
+
+    .img{
+        margin-bottom: 0;
+    }
 }
