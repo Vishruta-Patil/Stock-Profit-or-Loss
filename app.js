@@ -10,21 +10,28 @@ function stockPredictor() {
     var costPrice = purchasePrice.value * quantity.value;
     var sellingPrice = currentPrice.value  * quantity.value;
 
-    if (sellingPrice > costPrice ) {
+    if (costPrice<0 || sellingPrice<0) {
+        resultMsg.classList.remove("hide");
+        resultMsg.innerText = "Please enter value greater than 0";
+        displayImg("img2.jfif")
+    }
+    
+     else if (sellingPrice > costPrice  ) {
         var ProfitInAbsolute = sellingPrice - costPrice;
         var profitInPercentage = (ProfitInAbsolute/costPrice) * 100;
         resultMsg.classList.remove("hide");
-        resultMsg.innerText = "You gained " + profitInPercentage.toFixed(2) +" %. Your total profit is ₹ " + ProfitInAbsolute; 
-        displayImg("stonks-rise.gif");    
+        displayImg("stonks-rise.gif");
+        resultMsg.innerText = "You gained " + profitInPercentage.toFixed(2) +" %. Your total profit is ₹ " + ProfitInAbsolute;        
     }
 
     else {
         var lostInAbsolute = costPrice - sellingPrice;
         var lostInPercentage = (lostInAbsolute/costPrice) * 100;
         resultMsg.classList.remove("hide");
-        resultMsg.innerText = "You lost " + lostInPercentage.toFixed(2) + " %. Your total lost is ₹ " + lostInAbsolute;
         displayImg("not-stonks.gif");
-    }
+        resultMsg.innerText = "You lost " + lostInPercentage.toFixed(2) + " %. Your total lost is ₹ " + lostInAbsolute;
+        
+    }    
 }
 
 function displayImg(img) {
